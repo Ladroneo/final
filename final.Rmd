@@ -1,0 +1,33 @@
+
+```{r, librerias}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(skimr)
+```
+
+Conocimiento político:
+
+
+Interés personal vs infgluencia de grupos:
+
+
+valores y principios políticos
+
+
+identificación partidaria
+
+
+```{r}
+datos
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
