@@ -4,27 +4,63 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(skimr)
+library(lubridate)
 ```
-
 Conocimiento político:
-
-
 Interés personal vs infgluencia de grupos:
-
-
 valores y principios políticos
-
-
 identificación partidaria
-
-
-```{r}
-datos
-```
-
-```{r}
+```{r, datos}
+load("ELSOC_Long_2016_2022_v1.00.RData")
+datos <- elsoc_long_2016_2022.2 %>% 
+  mutate_all(~ifelse(. %in% c(-666, -777, -888, -999), NA, .))
+rm(elsoc_long_2016_2022.2)
 
 ```
+interés en la política: c13
+habla de política en casa: c14_01
+se informa por los medios: c14_02
+de acuerdo con: aborto: c37_02
+de acuerdo con: restricciones ingreso migrante: c37_05
+de acuerdo con: capitalización individual: c37_04
+```{r}
+datos_var <- datos %>% 
+  select(idencuesta, ola,
+         c13, c14_01, c14_02, c37_02, c37_04, c37_05, c53) %>% 
+  mutate(ola = as.factor(case_when(
+    ola == 1 ~ "2016",
+    ola == 2 ~ "2017",
+    ola == 3 ~ "2018",
+    ola == 4 ~ "2019",
+    ola == 5 ~ "2021",
+    ola == 6 ~ "2022",
+    TRUE ~ as.character(ola)
+  ))) %>% 
+  mutate(c53 = as.character(case_when(
+    c53 == 1 ~ "Gabriel Boric",
+    c53 == 2 ~ "José Antonio Kast",
+    TRUE ~ as.character(c53)
+  ))) %>% 
+  mutate(across(
+    c(c13, c14_01, c14_02, c37_02, c37_04, c37_05),
+    ~ case_when(
+      . == 1 ~ "Totalmente en desacuerdo", 
+      . == 2 ~ "En desacuerdo", 
+      . == 3 ~ "Ni de acuerdo ni en desacuerdo", 
+      . == 4 ~ "De acuerdo", 
+      . == 5 ~ "Totalmente de acuerdo", 
+      TRUE ~ as.character(.)
+    )
+  ))
+```
+votó boric/kast: c53
+```{r}
+datos_votos <- datos_var %>%
+  filter(!is.na(c53)) %>% 
+  group_by(c53)
+#aqui todos los que votaron
+```
+
 
 ```{r}
 
