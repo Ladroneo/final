@@ -1,28 +1,33 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
 
 ```{r, librerias}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(skimr)
-library(lubridate)
 ```
-Conocimiento político:
-Interés personal vs infgluencia de grupos:
-valores y principios políticos
-identificación partidaria
+
+Conocimiento político: Interés personal vs infgluencia de grupos:
+valores y principios políticos identificación partidaria
+
 ```{r, datos}
 load("ELSOC_Long_2016_2022_v1.00.RData")
 datos <- elsoc_long_2016_2022.2 %>% 
-  mutate_all(~ifelse(. %in% c(-666, -777, -888, -999), NA, .))
+  mutate_all(~ifelse(. %in% c(-666, -777, -888, -999, NA), NA, .))
 rm(elsoc_long_2016_2022.2)
-
 ```
-interés en la política: c13
-habla de política en casa: c14_01
-se informa por los medios: c14_02
-de acuerdo con: aborto: c37_02
-de acuerdo con: restricciones ingreso migrante: c37_05
+
+interés en la política: c13 
+habla de política en casa: c14_01 
+se informa por los medios: c14_02 
+de acuerdo con: aborto: c37_02 
+de acuerdo con: restricciones ingreso migrante: c37_05 
 de acuerdo con: capitalización individual: c37_04
+
 ```{r}
 datos_var <- datos %>% 
   select(idencuesta, ola,
@@ -41,8 +46,16 @@ datos_var <- datos %>%
     c53 == 2 ~ "José Antonio Kast",
     TRUE ~ as.character(c53)
   ))) %>% 
+  mutate(c13 = case_when(
+    c13 == 1 ~ "Nada interesado", 
+    c13 == 2 ~ "Poco interesado", 
+    c13 == 3 ~ "Algo interesado", 
+    c13 == 4 ~ "Bastante interesado", 
+    c13 == 5 ~ "Muy interesado", 
+    TRUE ~ as.character(c13)
+  )) %>% 
   mutate(across(
-    c(c13, c14_01, c14_02, c37_02, c37_04, c37_05),
+    c(c14_01, c14_02, c37_02, c37_04, c37_05),
     ~ case_when(
       . == 1 ~ "Totalmente en desacuerdo", 
       . == 2 ~ "En desacuerdo", 
@@ -51,9 +64,12 @@ datos_var <- datos %>%
       . == 5 ~ "Totalmente de acuerdo", 
       TRUE ~ as.character(.)
     )
-  ))
+  )) 
+# los c14 no tienen el mismo texto
 ```
+
 votó boric/kast: c53
+
 ```{r}
 datos_votos <- datos_var %>%
   filter(!is.na(c53)) %>% 
@@ -61,9 +77,7 @@ datos_votos <- datos_var %>%
 #aqui todos los que votaron
 ```
 
-
 ```{r}
-
+ggplot(datos_var, aes(y = c13))+
+  geom_bar()
 ```
-
-
