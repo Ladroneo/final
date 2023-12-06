@@ -8,7 +8,6 @@ editor_options:
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(skimr)
 ```
 
 Conocimiento político: Interés personal vs infgluencia de grupos:
@@ -31,7 +30,9 @@ de acuerdo con: capitalización individual: c37_04
 ```{r}
 datos_var <- datos %>% 
   select(idencuesta, ola,
-         c13, c14_01, c14_02, c37_02, c37_04, c37_05, c53) %>% 
+         c13, c37_02, c53)
+datos_var[] <- lapply(datos_var, factor)
+datos_var <- datos_var %>% 
   mutate(ola = as.factor(case_when(
     ola == 1 ~ "2016",
     ola == 2 ~ "2017",
@@ -41,43 +42,41 @@ datos_var <- datos %>%
     ola == 6 ~ "2022",
     TRUE ~ as.character(ola)
   ))) %>% 
-  mutate(c53 = as.character(case_when(
-    c53 == 1 ~ "Gabriel Boric",
-    c53 == 2 ~ "José Antonio Kast",
-    TRUE ~ as.character(c53)
-  ))) %>% 
-  mutate(c13 = case_when(
+  mutate(c13 = as.factor(case_when(
     c13 == 1 ~ "Nada interesado", 
     c13 == 2 ~ "Poco interesado", 
     c13 == 3 ~ "Algo interesado", 
     c13 == 4 ~ "Bastante interesado", 
     c13 == 5 ~ "Muy interesado", 
-    TRUE ~ as.character(c13)
-  )) %>% 
-  mutate(across(
-    c(c14_01, c14_02, c37_02, c37_04, c37_05),
-    ~ case_when(
-      . == 1 ~ "Totalmente en desacuerdo", 
-      . == 2 ~ "En desacuerdo", 
-      . == 3 ~ "Ni de acuerdo ni en desacuerdo", 
-      . == 4 ~ "De acuerdo", 
-      . == 5 ~ "Totalmente de acuerdo", 
-      TRUE ~ as.character(.)
-    )
-  )) 
-# los c14 no tienen el mismo texto
+    TRUE ~ as.factor(c13)
+  ))) %>% 
+  mutate(c37_02 = as.factor(case_when(
+    c37_02 == 1 ~ "Totalmente en desacuerdo", 
+    c37_02 == 2 ~ "En desacuerdo", 
+    c37_02 == 3 ~ "Ni de acuerdo ni en desacuerdo", 
+    c37_02 == 4 ~ "De acuerdo", 
+    c37_02 == 5 ~ "Totalmente de acuerdo", 
+    TRUE ~ as.factor(c37_02)
+  ))) %>% 
+  mutate(c53 = as.factor(case_when(
+    c53 == 1 ~ "Gabriel Boric",
+    c53 == 2 ~ "José Antonio Kast",
+    TRUE ~ as.factor(c53)
+  )))
+####
 ```
 
 votó boric/kast: c53
 
 ```{r}
-datos_votos <- datos_var %>%
+datos_vot <- datos_var %>%
   filter(!is.na(c53)) %>% 
   group_by(c53)
 #aqui todos los que votaron
 ```
 
 ```{r}
-ggplot(datos_var, aes(y = c13))+
-  geom_bar()
+ggplot(data = datos_vot,
+       aes(y = c53,x = c37_02, fill = c13)) +
+  geom_col()
 ```
