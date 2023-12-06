@@ -1,31 +1,77 @@
 ---
-editor_options: 
-  markdown: 
-    wrap: 72
+output: pdf_document
 ---
 
-```{r, librerias}
+# Examen final: Análisis Electoral y Opinión Pública 
+
+##### Bruno Riveros - Leonardo Navarro
+
+###### Martes, 5 de diciembre de 2023
+
+## Introducción
+
+Las definiciones de la opinión pública se ubican dentro de cuatro categorías, las cuales son: agregación, mayoritaria, discursiva/consensual y reificación.
+
+Agregación: Esta categoría sostiene que la opinión pública es un reflejo o resultado de la suma de las opiniones individuales de cada persona. En este contexto, se utiliza principalmente el análisis de encuestas y estadísticas. Según Bourdieu (2005), la agregación estadística ocurre de manera mecánica, independientemente de la conciencia y voluntad de los agentes.
+
+Mayoritaria: Desde esta perspectiva, la voluntad del pueblo se guía por la opinión mayoritaria. Habermas argumenta que la opinión pública ya no es un consenso general, sino que ahora se introduce "la regla de la mayoría" en los procesos electorales y en el pluralismo competitivo de partidos. Sin embargo, esta categoría invisibiliza las opiniones minoritarias que también forman parte de la población.
+
+Discursiva: Este enfoque parte de la premisa de que la opinión pública se transforma a medida que progresa el diálogo público. A diferencia de la agregación, argumenta que el diálogo entre diferentes sectores de la población provoca cambios dinámicos en las opiniones, en lugar de mantenerlas relativamente invariables.
+
+Reificación: Contrariamente a las categorías anteriores, la reificación sostiene que la opinión pública se basa en la información y percepciones que las personas reciben. Esta información puede ser producida por elites políticas o medios de comunicación con sesgos.
+
+Por medio de estas definiciones, acorde al contexto de nuestro análisis y sus categorías de \'\'Interés en la Política\'\', **se utilizará principalmente la definición discursiva** con el fin de contrastar el cambio de opinión respecto a diferentes temáticas como el nivel de acuerdo con la legalización del aborto, restricciones al ingreso de migrantes y capitalización individual, y como estas categorías se ven o no influenciadas por el nivel de interés en la política. A partir de aquello, existen diferentes teorías de la opinión pública, las cuales son:  
+
+**Conocimiento Político:** Esta teoría se centra en cómo los ciudadanos adquieren y procesan información política. Según Habermas (2018), "la opinión pública ya no es el consenso general, sino ahora se introduce 'la regla de la mayoría' en los procesos electorales del pluralismo competitivo de partidos" (p. 42). En suma, Sabine (2016) señala que el conocimiento político es crucial para una sociedad democrática, ya que permite a los ciudadanos tomar decisiones informadas y participar activamente en el proceso político (p. 73). Su objetivo es comprender cómo los ciudadanos adquieren y procesan información política, pretende responder a preguntas como ¿De qué manera se forma el conocimiento político y cómo afecta a la opinión pública?
+
+**Interés Personal vs. Influencia de Grupos:** Esta teoría examina cómo los intereses personales y las afiliaciones grupales afectan las opiniones políticas. Según Glynn, Herbst y O'Keefe (2019), las opiniones individuales pueden estar influenciadas por grupos de interés y sus agendas específicas (p. 112). Oskamp (2017) también destaca que los medios de comunicación evocan temas y prioridades para la sociedad, lo que influye en la formación de actitudes y opiniones (p. 88). Su objetivo es analizar cómo los intereses personales y las afiliaciones grupales afectan las opiniones políticas, pretende responder a preguntas como ¿En qué medida los intereses personales y las conexiones grupales/la pertenencia a un grupo moldea la opinión política?
+
+**Valores y Principios Políticos:** Esta teoría se enfoca en cómo los valores, creencias y principios políticos influyen en la formación de opiniones. Habermas (2018) argumenta que los valores personales, como la justicia o la libertad, afectan la percepción de los asuntos políticos (p. 55). Por otra parte, Nancy Fraser (2020) agrega que la identidad política es crucial para comprender cómo se construyen las mentalidades políticas y cómo los individuos perciben y responden a las cuestiones políticas (p. 127). Su objetivo es explorar cómo los valores, creencias y principios influyen en la formación de opiniones, pretende responder a preguntas como ¿Cómo los valores morales y políticos dan forma a las opiniones de las personas?
+
+**Identificación Partidaria:** La identificación con un partido político es esencial en la opinión pública. Según Roberto Gutiérrez (2017), la identidad política proporciona una base explicativa para la construcción de actitudes y percepciones políticas (p. 91). Jesús Aguilar López (2019) propone un índice para medir la dimensión fundamental de la identificación partidaria: la fuerza (p. 205). Su objetivo se centra en comprender la importancia de la afiliación partidaria o inclinación política en la opinión pública, busca responder preguntas tales como ¿De qué manera la lealtad partidaria afecta las opiniones y decisiones de los ciudadanos?
+
+Zaller establece que la opinión se forma en base a dos principios básicos, siendo estos la información y predisposición, sobre esto el autor argumenta que \"cada opinión es un matrimonio entre información y predisposición\" (Zaller, 1992). Esta afirmación logra abarcar cada una de las teorías anteriormente nombradas, el conocimiento político afecta directamente en la opinión, tanto en las fuentes de información que acuden los ciudadanos y su nivel de conocimiento en cada materia. Respecto al interés personal y la influencia de grupos, se refiere a la predisposición, dicho de otra manera, a la forma en que la información recibida es percibida acorde a intereses propios y al entorno (influencia de grupos de interés), bajo la misma línea los valores y principios políticos son decisivos, ejemplificándolo en el caso de Chile, la despenalización del aborto bajo las tres causales tiene posiciones divididas acorde a los propios valores y principios de cada persona, estableciéndose como un avance en materia de derechos para unos y un delito en contra de la vida humana.
+
+## Análisis
+
+Para este análisis de opinión publica en específico, se utilizará principalmente la **Teoría del Conocimiento Político**, con el fin de lograr caracterizar o distinguir la posición que adopta una persona informada o con mayor conocimiento político con respecto a la despenalización del aborto y como ello impacta en el apoyo por el excandidato presidencial José Antonio Kast (en contra de la despenalización del aborto) y el actual presidente Gabriel Boric (a favor de la despenalización del aborto). A pesar de tener una teoría central para el análisis.
+
+La base de datos utilizada es el Estudio Longitudinal Social de Chile (ELSOC), la cual es "una encuesta desarrollada para analizar intertemporalmente la evolución del conflicto y cohesión en la sociedad chilena" (COES, 2021). Su objetivo es examinar los principales antecedentes del conflicto y la cohesión social en Chile, con tal de que asi mismo se constituya como "un insumo empírico para la comprensión de las creencias, actitudes y percepciones (...) hacia las distintas dimensiones de la convivencia y el conflicto.
+
+### Carga de librerías
+
+```{r,message=FALSE, warning=FALSE}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 ```
 
-Conocimiento político: Interés personal vs infgluencia de grupos:
-valores y principios políticos identificación partidaria
+### Carga de datos
 
-```{r, datos}
+```{r}
 load("ELSOC_Long_2016_2022_v1.00.RData")
 datos <- elsoc_long_2016_2022.2 %>% 
   mutate_all(~ifelse(. %in% c(-666, -777, -888, -999, NA), NA, .))
 rm(elsoc_long_2016_2022.2)
 ```
 
-interés en la política: c13 
-habla de política en casa: c14_01 
-se informa por los medios: c14_02 
-de acuerdo con: aborto: c37_02 
-de acuerdo con: restricciones ingreso migrante: c37_05 
-de acuerdo con: capitalización individual: c37_04
+Inicialmente se utilizó la base de datos ELSOC en formato *long*, y consecuentemente fueron eliminadas las observaciones perdidas, incompletas, y de manera general: "no responde" y "no sabe".
+
+### Variables Utilizadas:
+
+-   Interés en la política: c13
+
+    -   *¿Qué tan interesado esta usted en la política?*
+
+-   De acuerdo con el aborto: c37_02
+
+    -   ¿*Cuán de acuerdo o en desacuerdo está usted con las siguiente afirmación?*: *El aborto debe ser legal bajo cualquier circunstancia*
+
+-   votó en las elecciones 2022 por Boric/Kast: c53
+
+    -   *Recordando que su respuesta es totalmente confidencial, ¿podría indicarme por quien votó usted en la segunda vuelta de la elección presidencial?*
+
+### Procesamiento de datos
 
 ```{r}
 datos_var <- datos %>% 
@@ -43,19 +89,19 @@ datos_var <- datos_var %>%
     TRUE ~ as.character(ola)
   ))) %>% 
   mutate(c13 = as.factor(case_when(
-    c13 == 1 ~ "Nada interesado", 
-    c13 == 2 ~ "Poco interesado", 
-    c13 == 3 ~ "Algo interesado", 
-    c13 == 4 ~ "Bastante interesado", 
-    c13 == 5 ~ "Muy interesado", 
+    c13 == 1 ~ "1. Nada interesado", 
+    c13 == 2 ~ "2. Poco interesado", 
+    c13 == 3 ~ "3. Algo interesado", 
+    c13 == 4 ~ "4. Bastante interesado", 
+    c13 == 5 ~ "5. Muy interesado", 
     TRUE ~ as.factor(c13)
   ))) %>% 
   mutate(c37_02 = as.factor(case_when(
-    c37_02 == 1 ~ "Totalmente en desacuerdo", 
-    c37_02 == 2 ~ "En desacuerdo", 
-    c37_02 == 3 ~ "Ni de acuerdo ni en desacuerdo", 
-    c37_02 == 4 ~ "De acuerdo", 
-    c37_02 == 5 ~ "Totalmente de acuerdo", 
+    c37_02 == 1 ~ "1. Totalmente en desacuerdo", 
+    c37_02 == 2 ~ "2. En desacuerdo", 
+    c37_02 == 3 ~ "3. Ni de acuerdo ni en desacuerdo", 
+    c37_02 == 4 ~ "4. De acuerdo", 
+    c37_02 == 5 ~ "5. Totalmente de acuerdo", 
     TRUE ~ as.factor(c37_02)
   ))) %>% 
   mutate(c53 = as.factor(case_when(
@@ -63,20 +109,72 @@ datos_var <- datos_var %>%
     c53 == 2 ~ "José Antonio Kast",
     TRUE ~ as.factor(c53)
   )))
-####
-```
 
-votó boric/kast: c53
-
-```{r}
 datos_vot <- datos_var %>%
   filter(!is.na(c53)) %>% 
   group_by(c53)
-#aqui todos los que votaron
 ```
 
-```{r}
-ggplot(data = datos_vot,
-       aes(y = c53,x = c37_02, fill = c13)) +
-  geom_col()
+Desde la base de datos original se seleccionaron las variables señaladas, se les categorizó como factor y sus observaciones fueron reescritas de acuerdo con el listado de variables. Además se creó una nueva base de datos con las personas que respondieron adecuadamente sobre su voto en la segunda vuelta de la elección presidencial de 2021. Con esta última base de datos desarrollamos nuestras conclusiones.
+
+## Gráficos
+
+### Distribución del interés en política entre los votantes del año 2022.
+
+```{r Distribución del interés en política entre los votantes del año 2022, echo=TRUE}
+ggplot() +
+  geom_bar(data = subset(datos_vot, !is.na(c13)), aes(y = c13)) +
+  labs(x = NULL, y = "Interés en política")
 ```
+
+Como primer punto, al ver **el primer grafico** de interés en política se evidencia que la mayoría de las personas que votaron en las últimas elecciones presidenciales no se encuentra interesada en la política, cifra que para el bienestar de la democracia resulta preocupante, ya que la mayoría de las personas ejercerán su derecho a voto sin tener un gran interés por la política. Aquello ocasiona que su voto puede no representar realmente la postura o interés que la persona tiene para el país, utilizando el modelo de recepción selectiva de Zaller (1992), entendiendo que las personas prestan más atención a la información que es coherente con sus creencias y menos atención a la información contradictoria, sumado a un bajo flujo de información, puede ocasionar que el voto sea guiado por la última información recibida o aquella a la que se le dio más relevancia en los medios de comunicación, esta falta de información que recibe o que utiliza el ciudadano para ejercer su voto puede facilitar el auge del populismo, debido a la falta de información que es clave para contrastar ideas.
+
+### Distribución de la postura frente al aborto entre los votantes del año 2022.
+
+```{r echo=TRUE}
+ggplot() +
+  geom_bar(data = subset(datos_vot, !is.na(c37_02)), aes(y = c37_02)) +
+  labs(x = NULL, y = "Postura frente al aborto")
+```
+
+**El segundo grafico** es respecto de la despenalización del aborto, el cual posee una distribución más equitativa a comparación del interés en la política, sin embargo, evidencia una tendencia en mostrarse en contra de la despenalización del aborto y que el mayor numero de personas se encuentre en una postura intermedia y no en la clasificación muy en desacuerdo o muy de acuerdo.
+
+### Distribución del interés en política en referencia al voto del año 2022.
+
+```{r echo=TRUE}
+ggplot() +
+  geom_bar(data = subset(datos_vot, !is.na(c37_02)), aes(x = c53, fill = c13)) +
+  labs(x = NULL, y = NULL, fill = "Interés en política") +
+  theme_bw()
+```
+
+**El tercer grafico** que relaciona la postura frente al aborto y el apoyo por los excandidatos, del cual se logra caracterizar que el votante que apoya a Kast, tiene una distribución que evidencia estar más en desacuerdo ante la despenalización del aborto, lo que posee total concordancia con el perfil político del excandidato, por otra parte quienes apoyan a Boric tienen una distribución más equitativa respecto a su postura sobre la despenalización del aborto.
+
+### Distribución de la postura frente al aborto en referencia al voto del año 2022.
+
+```{r echo=TRUE}
+ggplot() +
+  geom_bar(data = subset(datos_vot, !is.na(c37_02)), aes(x = c53, fill = c37_02)) +
+  labs(x = NULL, y = NULL, fill = "Postura frente al aborto") +
+  theme_bw()
+```
+
+**El cuarto grafico** respecto al interés en la política y el voto por candidato, se evidencia que el interés en política es similar para ambos candidatos, a pesar de las particularidades especificas de cada grupo.
+
+## Bibliografía
+
+Glynn, C. J., Herbst, S., & O\'Keefe, G. J. (2019). Influencia de grupos de interés en la opinión pública. Political Behavior, 112-128.
+
+Habermas, J. (2018). La opinión pública y su transformación. En Comunicación y sociedad, 42-56.
+
+Nancy Fraser (2020). Valores y principios morales en la opinión pública. Political Theory, 127-143.
+
+Oskamp, S. (2017). Medios de comunicación y formación de opiniones. Journal of Mass Communication, 88-102.
+
+Roberto Gutiérrez (2017). Identificación partidaria y construcción de actitudes políticas. Revista de Ciencias Políticas, 91-105.
+
+Sabine, G. H. (2016). Conocimiento político y participación ciudadana. Journal of Political Science, 73-89.
+
+Jesús Aguilar López (2019). Índice de fuerza de identificación partidaria. Estudios Políticos, 205-220.
+
+Zaller, J. R. (1992). The Nature and Origins of Mass Opinion. Cambridge University Press, 6-40
